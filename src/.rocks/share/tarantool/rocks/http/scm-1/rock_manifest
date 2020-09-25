@@ -1,0 +1,37 @@
+rock_manifest = {
+   doc = {
+      ["CHANGELOG.md"] = "42cd1cd2ddbe917ec9db17a70da3d7f3",
+      LICENSE = "5068ec3afa5021c3641e6f6be1d9acf0",
+      ["README.md"] = "ad23b697365c53325ceed76ba6865bc3"
+   },
+   ["http-scm-1.rockspec"] = "f899c02345fe8368b522a497ca5297bf",
+   lib = {
+      http = {
+         ["lib.so"] = "f17d1bf5b2e2f94de340d69c05171906"
+      }
+   },
+   lua = {
+      http = {
+         ["VERSION.lua"] = "5be052e54a18aaea600ad6c16c655bb7",
+         ["codes.lua"] = "b3b672d0ee65d9a8b45e04aa18fabd18",
+         ["mime_types.lua"] = "d4877cafb0b74d132eb4d65596981dae",
+         nginx_server = {
+            ["init.lua"] = "cc36c66d94176fd97721f9d79fcbe8cc"
+         },
+         router = {
+            ["fs.lua"] = "c2e6b1bf46de230b2a7d29523216b1a3",
+            ["init.lua"] = "4c1006f0269f358d636176179dec3a41",
+            ["matching.lua"] = "e270401ff3a12e66e8db5b2ea5bafc50",
+            ["middleware.lua"] = "40bfb41334dc2135dda1cc162522f178",
+            ["request.lua"] = "52affe8043e75ac9102416657c7c5917",
+            ["response.lua"] = "e04f5b4aabcbc6dd0879d2909e8187c4"
+         },
+         server = {
+            ["init.lua"] = "7b529bb7de5af4d62bd8e1902a1d7225",
+            ["tsgi_adapter.lua"] = "3f39ec8a7d87f8f5e25125ddde9ebd91"
+         },
+         ["tsgi.lua"] = "c9030e9404ce617812031333ddd828e2",
+         ["utils.lua"] = "e1f86a984b681b526e30bb9e6d9c044f"
+      }
+   }
+}

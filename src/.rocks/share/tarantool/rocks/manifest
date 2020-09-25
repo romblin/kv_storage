@@ -1,0 +1,136 @@
+commands = {}
+dependencies = {
+   checks = {
+      ["3.0.1-1"] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   },
+   http = {
+      ["scm-1"] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         },
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     3, 0, 1, string = "3.0.1"
+                  }
+               }
+            },
+            name = "checks"
+         }
+      }
+   }
+}
+modules = {
+   checks = {
+      "checks/3.0.1-1"
+   },
+   ["http.VERSION"] = {
+      "http/scm-1"
+   },
+   ["http.codes"] = {
+      "http/scm-1"
+   },
+   ["http.lib"] = {
+      "http/scm-1"
+   },
+   ["http.mime_types"] = {
+      "http/scm-1"
+   },
+   ["http.nginx_server.init"] = {
+      "http/scm-1"
+   },
+   ["http.router.fs"] = {
+      "http/scm-1"
+   },
+   ["http.router.init"] = {
+      "http/scm-1"
+   },
+   ["http.router.matching"] = {
+      "http/scm-1"
+   },
+   ["http.router.middleware"] = {
+      "http/scm-1"
+   },
+   ["http.router.request"] = {
+      "http/scm-1"
+   },
+   ["http.router.response"] = {
+      "http/scm-1"
+   },
+   ["http.server.init"] = {
+      "http/scm-1"
+   },
+   ["http.server.tsgi_adapter"] = {
+      "http/scm-1"
+   },
+   ["http.tsgi"] = {
+      "http/scm-1"
+   },
+   ["http.utils"] = {
+      "http/scm-1"
+   }
+}
+repository = {
+   checks = {
+      ["3.0.1-1"] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               checks = "checks.lua"
+            }
+         }
+      }
+   },
+   http = {
+      ["scm-1"] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {
+               checks = "3.0.1-1"
+            },
+            modules = {
+               ["http.VERSION"] = "http/VERSION.lua",
+               ["http.codes"] = "http/codes.lua",
+               ["http.lib"] = "http/lib.so",
+               ["http.mime_types"] = "http/mime_types.lua",
+               ["http.nginx_server.init"] = "http/nginx_server/init.lua",
+               ["http.router.fs"] = "http/router/fs.lua",
+               ["http.router.init"] = "http/router/init.lua",
+               ["http.router.matching"] = "http/router/matching.lua",
+               ["http.router.middleware"] = "http/router/middleware.lua",
+               ["http.router.request"] = "http/router/request.lua",
+               ["http.router.response"] = "http/router/response.lua",
+               ["http.server.init"] = "http/server/init.lua",
+               ["http.server.tsgi_adapter"] = "http/server/tsgi_adapter.lua",
+               ["http.tsgi"] = "http/tsgi.lua",
+               ["http.utils"] = "http/utils.lua"
+            }
+         }
+      }
+   }
+}
