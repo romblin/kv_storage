@@ -22,7 +22,7 @@ end
 
 
 local api = {
-    init = function(self)
+    init = function()
         box.once('init', function()
             box.schema.create_space('pairs', { if_not_exists = true, format = {
                 {name = 'key', type = 'string'},
@@ -32,7 +32,7 @@ local api = {
         end)
     end,
 
-    add = function(self, req)
+    add = function(req)
         local status, json_req = validate_request(req)
         if not status then
             return { status = 400, body = json_req }
@@ -46,7 +46,7 @@ local api = {
         return { status = 409 }
     end,
 
-    update = function(self, req)
+    update = function(req)
         local status, json_req = parse_request(req)
         if not status then
             return { status = 400, body = json_req }
@@ -61,7 +61,7 @@ local api = {
         return { status = 200 }
     end,
 
-    get = function(self, req)
+    get = function(req)
         local key = req:stash('key')
         local o = box.space.pairs:get(key)
         if o == nil then
@@ -72,7 +72,7 @@ local api = {
         return { status = 200, body = o.value, headers = { ['Content-Type'] = 'application/json' } }
     end,
 
-    delete = function(self, req)
+    delete = function(req)
         local key = req:stash('key')
         local o = box.space.pairs:delete(key)
         if o == nil then
